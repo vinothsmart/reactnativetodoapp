@@ -18,7 +18,7 @@ export default function App() {
           <FlatList 
             data={todos}
             renderItem={({ item }) => (
-              <Text>{item.text}</Text>
+              <TodoItem item={item} />
             )}
           />
         </View>
