@@ -17,11 +17,20 @@ export default function App() {
     })
   }
 
+  const sumbitHandler = (text) => {
+    setTodos((prevTodos)=>{
+      return [
+        { text: text, key: Math.random().toString()},
+        ...prevTodos
+      ]
+    });
+  }
+
   return (
     <View style={styles.container}>
       <Header/>
       <View style={styles.content}>
-        <AddTodo/>
+        <AddTodo sumbitHandler={sumbitHandler}/>
         <View style={styles.list}>
           <FlatList 
             data={todos}
