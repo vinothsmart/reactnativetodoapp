@@ -44,28 +44,28 @@ export default function App() {
   };
 
   return (
-    <Sandbox />
-    // <TouchableWithoutFeedback
-    //   onPress={() => {
-    //     Keyboard.dismiss();
-    //     console.log("dismissed keyboard");
-    //   }}
-    // >
-    //   <View style={styles.container}>
-    //     <Header />
-    //     <View style={styles.content}>
-    //       <AddTodo sumbitHandler={sumbitHandler} />
-    //       <View style={styles.list}>
-    //         <FlatList
-    //           data={todos}
-    //           renderItem={({ item }) => (
-    //             <TodoItem item={item} pressHandler={pressHandler} />
-    //           )}
-    //         />
-    //       </View>
-    //     </View>
-    //   </View>
-    // </TouchableWithoutFeedback>
+    // <Sandbox />
+    <TouchableWithoutFeedback
+      onPress={() => {
+        Keyboard.dismiss();
+        console.log("dismissed keyboard");
+      }}
+    >
+      <View style={styles.container}>
+        <Header />
+        <View style={styles.content}>
+          <AddTodo sumbitHandler={sumbitHandler} />
+          <View style={styles.list}>
+            <FlatList
+              data={todos}
+              renderItem={({ item }) => (
+                <TodoItem item={item} pressHandler={pressHandler} />
+              )}
+            />
+          </View>
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
